@@ -1,33 +1,113 @@
+/* Estilos Gerais */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #fffaf0;
-    color: #185350;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #fdf5e6; /* Creme */
+    color: #556b2f; /* Verde Oliva */
+    line-height: 1.6;
 }
-header {
-    background: #fffaf0;
-    padding: 20px;
-    color: rgb(5, 77, 59);
-    font-size: 24px;
+
+h1, h2, h3 {
+    font-family: 'Great Vibes', cursive;
+    color: #6b8e23; /* Verde Oliva mais claro */
 }
-section {
-    margin: 20px;
-    padding: 20px;
+
+h1 {
+    font-size: 4rem;
+    margin: 0;
 }
+
+h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Seções */
+.section {
+    padding: 2rem;
+    text-align: center;
+    background-color: #fff; /* Fundo branco para as seções */
+    margin: 1rem auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}
+
+/* Galeria */
+.photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
 .photos img {
     width: 200px;
-    height: auto;
-    margin: 10px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-iframe {
-    width: 80%;
-    height: 300px;
+
+/* Mapa */
+.map-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 40%; /* Reduzindo a altura do mapa */
+    margin: 1rem auto;
+    max-width: 600px; /* Largura máxima do mapa */
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     border: none;
 }
-footer {
-    background: #185350;
-    padding: 10px;
-    color: #fffaf0;
+
+/* Botão de Presentes */
+.present-link {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #6b8e23; /* Verde Oliva */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.present-link:hover {
+    background-color: #556b2f; /* Verde Oliva mais escuro */
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #fff;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    color: #6b8e23; /* Verde Oliva */
 }
