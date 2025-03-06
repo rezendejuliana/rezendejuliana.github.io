@@ -3,7 +3,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fdf5e6; /* Creme */
+    background-color: #bbd293d5; /* Creme */
     color: #556b2f; /* Verde Oliva */
     line-height: 1.6;
 }
@@ -37,7 +37,7 @@ p {
 .header {
     text-align: center;
     padding: 2rem;
-    background-color: #fff;
+    background-color: #fdf5e6e1;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -45,7 +45,7 @@ p {
 .section {
     padding: 2rem;
     text-align: center;
-    background-color: #fff; /* Fundo branco para as seções */
+    background-color: #fdf5e6e4; /* Fundo branco para as seções */
     margin: 1rem auto;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -91,7 +91,7 @@ p {
     display: inline-block;
     padding: 0.8rem 1.5rem;
     background-color: #6b8e23; /* Verde Oliva */
-    color: #fff;
+    color: #fdf5e6e3;
     text-decoration: none;
     border-radius: 5px;
     font-size: 1.1rem;
@@ -106,7 +106,7 @@ p {
 .footer {
     text-align: center;
     padding: 1.5rem;
-    background-color: #fff;
+    background-color: #fdf5e6e1;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
     margin-top: 2rem;
     color: #6b8e23; /* Verde Oliva */
