@@ -8,70 +8,42 @@ body {
     line-height: 1.8;
 }
 
-/* Cabeçalhos */
-h1 {
-    font-family: 'Dancing Script', cursive;
-    color: #D4A373; /* Tom terroso */
-    text-align: center;
-    font-size: 3.5rem;
-    margin: 0;
-}
-
-h2 {
-    font-family: 'Dancing Script', cursive;
-    color: #6D8B74; /* Verde suave */
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-h3 {
-    font-family: 'Quicksand', sans-serif;
-    color: #4A6B63; /* Verde-escuro */
-    text-align: center;
-    font-size: 1.8rem;
-    margin: 1rem 0;
-}
-
-p {
-    font-size: 1.1rem;
-    text-align: center;
-    color: #4A4A4A;
-    margin: 0.5rem 0;
-}
-
-/* Header */
+/* Header com Imagem de Fundo */
 .header {
+    background-image: url(../assets/JJ.png); /* Imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Altura total da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 2rem;
-    background-color: #4A6B63; /* Verde-escuro */
     color: white;
-    border-bottom: 4px solid #D4A373; /* Borda com a cor do título */
 }
 
 /* Seções */
 .section {
-    padding: 2rem;
+    padding: 4rem 2rem;
     background-color: #FFFFFF;
-    margin: 1.5rem auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 850px;
+    margin: 2rem auto;
+    max-width: 1000px;
+    text-align: center;
 }
 
 /* Contador Regressivo */
 #countdown {
-    text-align: center;
+    background-color: #6D8B74; /* Verde suave */
+    color: white;
+    padding: 2rem;
 }
 
 .timer {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    color: #6D8B74; /* Verde suave */
     margin: 1rem 0;
 }
 
-/* Galeria */
+/* Galeria de Fotos */
 .photos {
     display: flex;
     flex-wrap: wrap;
@@ -191,14 +163,6 @@ p {
 
 /* Responsividade */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    h2 {
-        font-size: 2rem;
-    }
-
     .photos img {
         width: 100%;
         height: auto;
