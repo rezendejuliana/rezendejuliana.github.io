@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juliana e José Wesley</title>
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="assets/script.js" defer></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -25,19 +27,45 @@
         <p>Nos conhecemos próximo à formatura da Juliana, em 2018, e desde então sabíamos que este grande dia iria acontecer!</p>
     </section>
 
-    <!-- Galeria de Fotos -->
-    <section id="gallery" class="section">
-        <h2>Nossa Galeria</h2>
-        <div class="photos">
-            <img src="assets/1.jpeg" alt="2018 Passeio Shopping">
-            <img src="assets/2.jpeg" alt="2019 Passeio Ponteio">
-            <img src="assets/3.jpeg" alt="2023 Viagem Ouro Preto">
-            <img src="assets/5.jpeg" alt="2024 Escócia Meadows">
-            <img src="assets/7.jpeg" alt="2024 Passeio Vila Bela">
-            <img src="assets/8.jpeg" alt="2024 Amor">
-            <img src="assets/9.jpeg" alt="2025 Noivado">
+<!-- Galeria de Fotos -->
+<section id="gallery" class="section">
+    <h2>Nossa Galeria</h2>
+    <div class="swiper gallery-swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="assets/1.jpeg" alt="2018 Passeio Shopping">
+            </div>
+            <div class="swiper-slide">
+                <img src="assets/2.jpeg" alt="2019 Passeio Ponteio">
+            </div>
+            <div class="swiper-slide">
+                <img src="assets/22.jpeg" alt="2023 Ano novo">
+            </div>
+            <div class="swiper-slide">
+                <img src="assets/3.jpeg" alt="2023 Viagem Ouro Preto">
+            </div>
+            <div class="swiper-slide">
+                <img src="assets/4.jpeg" alt="2024 Escocia">
+            </div>
+            <div class="swiper-slide">
+                <img src="assets/5.jpeg" alt="2024 Escócia Meadows">
+            </div>
+            <div class="swiper-slide">
+                <img src="assets/7.jpeg" alt="2024 Passeio Vila Bela">
+            </div>
+            <div class="swiper-slide">
+                <img src="assets/8.jpeg" alt="2024 Amor">
+            </div>
+            <div class="swiper-slide">
+                <img src="assets/9.jpeg" alt="2025 Noivado">
+            </div>
         </div>
-    </section>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+
 
     <!-- Local da Cerimônia -->
     <section id="location" class="section">

@@ -21,6 +21,20 @@ body {
     color: white;
 }
 
+.header {
+    overflow: hidden;
+    position: relative;
+}
+
+/* Garantir que não haja setas no header */
+.header .swiper-button-next,
+.header .swiper-button-prev,  .header .swiper-container ,
+.header .swiper-pagination-bullet,  .header .swiper-pagination-bullet-active 
+    .header {
+        display: none !important; /* Oculta as setas no header */
+    }
+
+
 /* Seções */
 .section {
     padding: 4rem 2rem;
@@ -171,4 +185,53 @@ body {
     .map-container {
         padding-top: 60%; /* Ajuste para dispositivos móveis */
     }
+}
+/* Ajuste no carrossel para evitar impacto no header */
+#gallery {
+    position: relative;
+    z-index: 1; /* Garante que o carrossel não afete outras seções */
+}
+
+.gallery-swiper {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.gallery-swiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.gallery-swiper .swiper-slide img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajuste das setas */
+.gallery-swiper .swiper-button-next,
+.gallery-swiper .swiper-button-prev {
+    color: #6D8B74;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo da paginação */
+.gallery-swiper .swiper-pagination-bullet {
+    background-color: #6D8B74;
+    opacity: 0.5;
+}
+
+.gallery-swiper .swiper-pagination-bullet-active {
+    opacity: 1;
 }

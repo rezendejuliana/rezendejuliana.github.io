@@ -1,5 +1,31 @@
-// Contador Regressivo
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function () {
+     // Inicializa o Swiper apenas na galeria
+     new Swiper('.gallery-swiper', {
+        loop: true,
+        navigation: {
+            nextEl: '.gallery-swiper .swiper-button-next',
+            prevEl: '.gallery-swiper .swiper-button-prev',
+        },
+        pagination: {
+            el: '.gallery-swiper .swiper-pagination',
+            clickable: true,
+        },
+        autoplay: {
+            delay: 3000,
+        },
+        breakpoints: {
+            600: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            900: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+        },
+    });
+
+    // Função do Contador Regressivo
     const weddingDate = new Date("2026-04-18T10:00:00").getTime();
 
     function updateCountdown() {
@@ -22,10 +48,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     setInterval(updateCountdown, 1000);
+    updateCountdown();
 });
 
 // Formulário de RSVP
-document.getElementById("rsvp-form").addEventListener("submit", function(event) {
+document.getElementById("rsvp-form")?.addEventListener("submit", function(event) {
     event.preventDefault();
 
     let name = document.getElementById("name").value.trim();
@@ -52,3 +79,4 @@ document.getElementById("rsvp-form").addEventListener("submit", function(event) 
 
     this.reset();
 });
+
