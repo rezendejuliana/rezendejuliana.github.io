@@ -6,6 +6,7 @@
     <title>Lista de Presentes - Juliana e José Wesley</title>
     <link rel="stylesheet" href="assets/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 </head>
 <body>
     <!-- Header com imagem de fundo -->
@@ -18,37 +19,71 @@
         <h2>Nossa Lista de Presentes</h2>
         <p>Escolha um presente especial para nos ajudar a começar nossa vida juntos:</p>
         <div class="gift-list">
+            <div class="gift-item">
+                <h3>teste</h3>
+                <p>R$ 2,00</p>
+                <button class="gift-link" onclick="openPixModal('00020126330014br.gov.bcb.pix011109042485698520400005303986540125802BR5925Juliana Rezende S B Alves6006Cidade62070503***6304A928')">Comprar</button>
+            </div>
             <!-- Item 1 -->
             <div class="gift-item">
                 <h3>Jogo de Panelas</h3>
                 <p>R$ 200,00</p>
-                <a href="https://www.site-de-presentes.com/jogo-de-panelas" target="_blank" class="gift-link">Comprar</a>
+                <button class="gift-link" onclick="openPixModal('00020126330014br.gov.bcb.pix01110904248569852040000530398654032005802BR5925Juliana Rezende S B Alves6006Cidade62070503***6304365B')">Comprar</button>
             </div>
             <!-- Item 2 -->
-            <div class="gift-item">
-                <h3>Máquina de Café</h3>
-                <p>R$ 300,00</p>
-                <a href="https://www.site-de-presentes.com/maquina-de-cafe" target="_blank" class="gift-link">Comprar</a>
-            </div>
-            <!-- Item 3 -->
-            <div class="gift-item">
-                <h3>Jogo de Copos</h3>
-                <p>R$ 150,00</p>
-                <a href="https://www.site-de-presentes.com/jogo-de-copos" target="_blank" class="gift-link">Comprar</a>
-            </div>
-            <!-- Item 4 -->
-            <div class="gift-item">
-                <h3>Liquidificador</h3>
-                <p>R$ 250,00</p>
-                <a href="https://www.site-de-presentes.com/liquidificador" target="_blank" class="gift-link">Comprar</a>
-            </div>
+            
             <!-- Adicione mais itens conforme necessário -->
         </div>
     </section>
+
+    <!-- Modal para o QR Code do PIX -->
+    <div id="pixModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePixModal()">&times;</span>
+            <h2>Pagamento via PIX</h2>
+            <p>Escaneie o QR Code abaixo para realizar o pagamento:</p>
+            <div id="qrcode"></div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
         <p>Com amor, Juliana e José Wesley ❤️</p>
     </footer>
+
+    <script>
+        // Função para abrir o modal e gerar o QR Code
+        function openPixModal(pixCode) {
+            const modal = document.getElementById("pixModal");
+            const qrcodeDiv = document.getElementById("qrcode");
+
+            // Limpa o QR Code anterior
+            qrcodeDiv.innerHTML = "";
+
+            // Gera o novo QR Code
+            new QRCode(qrcodeDiv, {
+                text: pixCode,
+                width: 200,
+                height: 200,
+            });
+
+            // Exibe o modal
+            modal.style.display = "block";
+        }
+
+        // Função para fechar o modal
+        function closePixModal() {
+            const modal = document.getElementById("pixModal");
+            modal.style.display = "none";
+        }
+
+        // Fecha o modal ao clicar fora dele
+        window.onclick = function (event) {
+            const modal = document.getElementById("pixModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
 </body>
 </html>
