@@ -21,6 +21,14 @@ body {
     color: white;
 }
 
+.headerPresentes {
+    text-align: center;
+    padding: 2rem;
+    background-color: #fff; /* Verde-escuro */
+    color: #4A4A4A;
+    margin-top: 2rem;
+}
+
 .header {
     overflow: hidden;
     position: relative;
@@ -142,7 +150,9 @@ body {
     color: #6D8B74; /* Verde suave */
 }
 
-/* Lista de Presentes */
+
+
+/* Estilo do botão de presentes */
 .present-link {
     display: inline-block;
     padding: 0.8rem 1.5rem;
@@ -226,12 +236,53 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo da paginação */
-.gallery-swiper .swiper-pagination-bullet {
-    background-color: #6D8B74;
-    opacity: 0.5;
+/* Estilo da página de presentes */
+.gift-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
 }
 
-.gallery-swiper .swiper-pagination-bullet-active {
-    opacity: 1;
+.gift-item {
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gift-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.gift-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #4A4A4A;
+}
+
+.gift-item p {
+    font-size: 1rem;
+    color: #6D8B74;
+    margin-bottom: 1rem;
+}
+
+.gift-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #6D8B74;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.gift-link:hover {
+    background-color: #5A7D7C;
 }
