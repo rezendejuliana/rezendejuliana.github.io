@@ -19,21 +19,31 @@ body {
     height: 200px; /* Altura padrão */
 }
 
-/* 📱 Ajuste para telas pequenas (celulares) */
+.logo-header {
+    background-image: url('data:image/svg+xml;utf8,<svg ...>'); /* Seu SVG */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    height: 40vh; /* Ocupa 40% da altura da tela */
+    min-height: 250px; /* Garante tamanho mínimo */
+}
+
+/* 📱 Ajuste para mobile */
 @media (max-width: 768px) {
     .logo-header {
-        height: 150px; /* Reduz altura */
-        background-size: 80%; /* Ajusta proporção */
+        height: 30vh; /* Ocupa menos espaço no mobile */
+        min-height: 200px;
     }
 }
 
 /* 💻 Ajuste para telas muito grandes */
 @media (min-width: 1200px) {
     .logo-header {
-        height: 250px; /* Aumenta altura para telas grandes */
-        background-size: 60%; /* Mantém um bom ajuste */
+        height: 50vh; /* Aumenta a altura para telas grandes */
     }
 }
+
 
 
 .headerPresentes {
