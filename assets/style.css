@@ -8,18 +8,33 @@ body {
     line-height: 1.8;
 }
 
-/* Header com Imagem de Fundo */
-.header {
-    background-image: url(../assets/JJ.png); /* Imagem de fundo */
-    background-size: cover;
+
+
+.logo-header {
+    background-image: url('data:image/svg+xml;utf8,<svg width="1000" height="600" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg"><title>Logo de Casamento - Juliana &amp; José Wesley</title><rect width="100%" height="100%" fill="none" /><g transform="translate(500,300) scale(0.4)"><text text-anchor="middle" font-family="Great Vibes, cursive" font-size="80" fill="%233D5F4C" dy="-120">J &amp; J</text><path d="M -250 0 C -200 -50, -160 -50, -110 0 C -90 15, -70 15, -50 0" fill="none" stroke="%233D5F4C" stroke-width="2.5" /><path d="M -200 -20 Q -210 -30, -220 -20 T -240 -10" stroke="%233D5F4C" stroke-width="2" fill="none"/><path d="M -140 -20 Q -150 -30, -160 -20 T -180 -10" stroke="%233D5F4C" stroke-width="2" fill="none"/><path d="M 250 0 C 200 -50, 160 -50, 110 0 C 90 15, 70 15, 50 0" fill="none" stroke="%233D5F4C" stroke-width="2.5" /><path d="M 200 -20 Q 210 -30, 220 -20 T 240 -10" stroke="%233D5F4C" stroke-width="2" fill="none"/><path d="M 140 -20 Q 150 -30, 160 -20 T 180 -10" stroke="%233D5F4C" stroke-width="2" fill="none"/><text text-anchor="middle" font-family="Great Vibes, cursive" font-size="50" fill="%233D5F4C" dy="20">Juliana &amp; José Wesley</text><text text-anchor="middle" font-family="Great Vibes, cursive" font-size="30" fill="%233D5F4C" dy="70">18.04.2026</text></g></svg>');
+    background-size: contain;
     background-position: center;
-    height: 100vh; /* Altura total da tela */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    height: 200px; /* Altura padrão */
 }
+
+/* 📱 Ajuste para telas pequenas (celulares) */
+@media (max-width: 768px) {
+    .logo-header {
+        height: 150px; /* Reduz altura */
+        background-size: 80%; /* Ajusta proporção */
+    }
+}
+
+/* 💻 Ajuste para telas muito grandes */
+@media (min-width: 1200px) {
+    .logo-header {
+        height: 250px; /* Aumenta altura para telas grandes */
+        background-size: 60%; /* Mantém um bom ajuste */
+    }
+}
+
 
 .headerPresentes {
     text-align: center;
