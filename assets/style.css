@@ -11,27 +11,30 @@ body {
 
 
 .logo-header {
-  width: 100%;
-  height: 100vh; /* Header ocupa a tela inteira */
-  background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"><g transform="translate(500,280)"><text text-anchor="middle" font-family="Great Vibes, cursive" font-size="200" fill="%233D5F4C" dy="-100">J &amp; J</text><path d="M -270 0 C -220 -50, -180 -50, -130 0 C -110 15, -90 15, -70 0" fill="none" stroke="%233D5F4C" stroke-width="3"/><path d="M -220 -20 Q -230 -30, -240 -20 T -260 -10" stroke="%233D5F4C" stroke-width="2.5" fill="none"/><path d="M -160 -20 Q -170 -30, -180 -20 T -200 -10" stroke="%233D5F4C" stroke-width="2.5" fill="none"/><path d="M 270 0 C 220 -50, 180 -50, 130 0 C 110 15, 90 15, 70 0" fill="none" stroke="%233D5F4C" stroke-width="3"/><path d="M 220 -20 Q 230 -30, 240 -20 T 260 -10" stroke="%233D5F4C" stroke-width="2.5" fill="none"/><path d="M 160 -20 Q 170 -30, 180 -20 T 200 -10" stroke="%233D5F4C" stroke-width="2.5" fill="none"/><text text-anchor="middle" font-family="Great Vibes, cursive" font-size="130" fill="%233D5F4C" dy="40">Juliana &amp; José Wesley</text><text text-anchor="middle" font-family="Great Vibes, cursive" font-size="80" fill="%233D5F4C" dy="100">18.04.2026</text></g></svg>') no-repeat center center;
-  background-size: contain;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 100%;
+    height: 100vh; /* Header ocupa toda a tela */
+    background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"><g transform="translate(500,280) scale(1.2)"><text text-anchor="middle" font-family="Great Vibes, cursive" font-size="120" fill="%233D5F4C" dy="-100">J &amp; J</text><path d="M -270 0 C -220 -50, -180 -50, -130 0 C -110 15, -90 15, -70 0" fill="none" stroke="%233D5F4C" stroke-width="3"/><path d="M -220 -20 Q -230 -30, -240 -20 T -260 -10" stroke="%233D5F4C" stroke-width="2.5" fill="none"/><path d="M -160 -20 Q -170 -30, -180 -20 T -200 -10" stroke="%233D5F4C" stroke-width="2.5" fill="none"/><path d="M 270 0 C 220 -50, 180 -50, 130 0 C 110 15, 90 15, 70 0" fill="none" stroke="%233D5F4C" stroke-width="3"/><path d="M 220 -20 Q 230 -30, 240 -20 T 260 -10" stroke="%233D5F4C" stroke-width="2.5" fill="none"/><path d="M 160 -20 Q 170 -30, 180 -20 T 200 -10" stroke="%233D5F4C" stroke-width="2.5" fill="none"/><text text-anchor="middle" font-family="Great Vibes, cursive" font-size="90" fill="%233D5F4C" dy="50">Juliana &amp; José Wesley</text><text text-anchor="middle" font-family="Great Vibes, cursive" font-size="50" fill="%233D5F4C" dy="140">18.04.2026</text></g></svg>') no-repeat center center;
+    background-size: contain;
+    background-color: #FAF9F6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-
+/* 📱 Ajuste para mobile */
 @media (max-width: 768px) {
-  .logo-header {
-    height: 70vh; /* Reduz altura em telas menores */
-  }
-  
-  .logo-header svg {
-    width: 100%; /* Ajusta tamanho do SVG */
-    height: auto;
-  }
+    .logo-header {
+        height: 80vh; /* Reduz altura em telas menores */
+        background-size: 80%; /* Ajusta a proporção */
+    }
 }
 
+/* 💻 Ajuste para telas grandes */
+@media (min-width: 1200px) {
+    .logo-header {
+        background-size: 70%;
+    }
+}
 
 
 .headerPresentes {
