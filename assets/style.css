@@ -9,33 +9,32 @@ body {
 }
 
 .logo-header {
-    width: 100%;
-    height: 100vh;
+   
     background: url('../assets/logo.svg') no-repeat center center;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #f8f8f8;
+    background-size: cover; /* Garante que a imagem cubra o header sem cortes */
+    background-position: contain;
+    background-color: #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 auto; /* Centraliza o header */
 }
 
 /* 📱 Ajuste para mobile */
 @media (max-width: 768px) {
     .logo-header {
-        height: 100vh; /* Reduz altura em telas menores */
-        background-size: 80%; /* Ajusta a proporção */
+        height: 70vh; /* Reduz a altura em dispositivos móveis */
+        background-size: 90%; /* Ajusta a proporção da imagem */
     }
 }
 
 /* 💻 Ajuste para telas grandes */
 @media (min-width: 1200px) {
     .logo-header {
-        background-size: 70%;
+        height: 100vh; /* Mantém a altura total em telas grandes */
+        background-size: 70%; /* Ajusta a proporção da imagem */
     }
 }
-
 
 .headerPresentes {
     text-align: center;
@@ -57,7 +56,6 @@ body {
     .header {
         display: none !important; /* Oculta as setas no header */
     }
-
 
 /* Seções */
 .section {
@@ -166,8 +164,6 @@ body {
     color: #6D8B74; /* Verde suave */
 }
 
-
-
 /* Estilo do botão de presentes */
 .present-link {
     display: inline-block;
@@ -212,6 +208,7 @@ body {
         padding-top: 60%; /* Ajuste para dispositivos móveis */
     }
 }
+
 /* Ajuste no carrossel para evitar impacto no header */
 #gallery {
     position: relative;
