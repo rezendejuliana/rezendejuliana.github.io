@@ -17,38 +17,36 @@ body {
     color: #4A4A4A;
     line-height: 1.8;
 }
-
 .logo-header {
-    background: url('https://i.imgur.com/N1X8opk.png') no-repeat center center; /* Caminho correto */
-    background-size: contain; /* Ajusta a imagem completamente */
+    background: url('https://i.imgur.com/N1X8opk.png') no-repeat center center; /* Correct path */
+    background-size: contain; /* Ensures the image fits within the container */
     background-color: #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    height: 100vh; /* Altura mais equilibrada */
-    max-height: 600px; /* Evita que a imagem fique muito grande */
+    height: 100vh; /* Full viewport height */
+    max-height: 600px; /* Prevents the image from becoming too large */
     width: 100%;
 }
 
-/* 📱 Ajuste para mobile */
+/* 📱 Mobile adjustments */
 @media (max-width: 768px) {
     .logo-header {
-        height: 600vh; /* Reduz a altura em dispositivos móveis */
-        max-height: 600px; /* Mantém proporção */
-        background-size: 80%; /* Garante que a imagem caiba */
+        height: 50vh; /* Adjust height for mobile */
+        max-height: none; /* Remove max-height restriction */
+        background-size: 80%; /* Increase the size of the background image */
     }
 }
 
-/* 💻 Ajuste para telas grandes */
+/* 💻 Large screen adjustments */
 @media (min-width: 1200px) {
     .logo-header {
-        height: 600vh;
-        max-height: 600px;
-        background-size: 60%;
+        height: 100vh; /* Full viewport height */
+        max-height: 600px; /* Restrict maximum height */
+        background-size: 50%; /* Adjust background size for larger screens */
     }
 }
-
 
 .headerPresentes {
     text-align: center;
