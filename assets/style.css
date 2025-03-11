@@ -25,15 +25,15 @@ body {
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    height: 100vh; /* Full viewport height */
-    max-height: 600px; /* Prevents the image from becoming too large */
+    height: 60vh; /* Full viewport height */
+    max-height: none; /* Prevents the image from becoming too large */
     width: 100%;
 }
 
 /* 📱 Mobile adjustments */
 @media (max-width: 768px) {
     .logo-header {
-        height: 50vh; /* Adjust height for mobile */
+        height: 30vh; /* Adjust height for mobile */
         max-height: none; /* Remove max-height restriction */
         background-size: 80%; /* Increase the size of the background image */
     }
@@ -42,9 +42,9 @@ body {
 /* 💻 Large screen adjustments */
 @media (min-width: 1200px) {
     .logo-header {
-        height: 100vh; /* Full viewport height */
+        height: 48vh; /* Full viewport height */
         max-height: 600px; /* Restrict maximum height */
-        background-size: 50%; /* Adjust background size for larger screens */
+        background-size: 40%; /* Adjust background size for larger screens */
     }
 }
 
@@ -87,7 +87,7 @@ body {
 
 .timer {
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 500;
     margin: 1rem 0;
 }
 
@@ -96,13 +96,15 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem; /* Increase gap for better spacing */
     margin-top: 1rem;
+    padding: 1rem; /* Add padding for better spacing */
 }
 
 .photos img {
-    width: 200px;
-    height: 200px;
+    width: 100%; /* Make images responsive */
+    max-width: 500px; /* Increase max-width for larger photos */
+    height: auto; /* Maintain aspect ratio */
     object-fit: cover;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -113,24 +115,23 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Mapa */
-.map-container {
-    position: relative;
-    overflow: hidden;
-    padding-top: 40%; /* Proporção do mapa */
-    margin: 1rem auto;
-    max-width: 600px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* 📱 Mobile adjustments */
+@media (max-width: 768px) {
+    .photos {
+        gap: 1rem; /* Slightly reduce gap for smaller screens */
+    }
+
+    .photos img {
+        max-width: 100%; /* Allow images to take full width on mobile */
+        height: auto; /* Maintain aspect ratio */
+    }
 }
 
-.map-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
+/* 💻 Large screen adjustments */
+@media (min-width: 1200px) {
+    .photos img {
+        max-width: 600px; /* Increase max-width for larger screens */
+    }
 }
 
 /* Formulário de RSVP */
@@ -250,15 +251,45 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
-/* Ajuste das setas */
+/* Ajuste das setas (arrows only) */
 .gallery-swiper .swiper-button-next,
 .gallery-swiper .swiper-button-prev {
-    color: #6D8B74;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 15px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #6D8B74; /* Arrow color */
+    background: none; /* Remove background */
+    padding: 0; /* Remove padding */
+    width: 30px; /* Smaller width */
+    height: 30px; /* Smaller height */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    opacity: 0.7; /* Slightly transparent by default */
+}
+
+/* Arrow icons */
+.gallery-swiper .swiper-button-next::after,
+.gallery-swiper .swiper-button-prev::after {
+    font-size: 24px; /* Slightly larger arrow icon */
+    font-weight: bold; /* Make the arrow slightly thicker */
+}
+
+/* Hover effect */
+.gallery-swiper .swiper-button-next:hover,
+.gallery-swiper .swiper-button-prev:hover {
+    opacity: 1; /* Fully visible on hover */
+    transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+/* Active (click) effect */
+.gallery-swiper .swiper-button-next:active,
+.gallery-swiper .swiper-button-prev:active {
+    transform: scale(0.9); /* Slightly shrink when clicked */
+}
+
+/* Position adjustments */
+.gallery-swiper .swiper-button-next {
+    right: 10px; /* Position from the right */
+}
+
+.gallery-swiper .swiper-button-prev {
+    left: 10px; /* Position from the left */
 }
 
 /* Estilo da página de presentes */
