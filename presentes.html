@@ -6,84 +6,41 @@
     <title>Lista de Presentes - Juliana e José Wesley</title>
     <link rel="stylesheet" href="assets/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 </head>
 <body>
-    <!-- Header com imagem de fundo -->
-    <header class="headerPresentes">
-        <h1>Lista de Presentes</h1>
-    </header>
+    <div class="logo-header" aria-label="Logo do casamento Juliana e José Wesley"></div>
 
-    <!-- Seção da Lista de Presentes -->
-    <section class="section">
-        <h2>Nossa Lista de Presentes</h2>
-        <p>Escolha um presente especial para nos ajudar a começar nossa vida juntos:</p>
-        <div class="gift-list">
-            <div class="gift-item">
-                <h3>teste</h3>
-                <p>R$ 2,00</p>
-                <button class="gift-link" onclick="openPixModal('00020126330014br.gov.bcb.pix011109042485698520400005303986540125802BR5925Juliana Rezende S B Alves6006Cidade62070503***6304A928')">Comprar</button>
-            </div>
-            <!-- Item 1 -->
+    <section id="gift-list" class="section">
+        <h2>Lista de Presentes</h2>
+        <p>Escolha um presente especial para nos ajudar a começar essa nova fase da vida juntos.</p>
+        <div class="gift-container">
             <div class="gift-item">
                 <h3>Jogo de Panelas</h3>
-                <p>R$ 200,00</p>
-                <button class="gift-link" onclick="openPixModal('00020126330014br.gov.bcb.pix01110904248569852040000530398654032005802BR5925Juliana Rezende S B Alves6006Cidade62070503***6304365B')">Comprar</button>
+                <button class="present-link2" data-pix="00020126330014BR.GOV.BCB.PIX0114+55119999999995204000053039865802BR5925Juliana e José Wesley6009SaoPaulo61080540900062250520Panelas6304A3F3">Presentear</button>
             </div>
-            <!-- Item 2 -->
             
-            <!-- Adicione mais itens conforme necessário -->
+            <div class="gift-item">
+                <h3>Aspirador de Pó</h3>
+                <button class="present-link2" data-pix="00020126330014BR.GOV.BCB.PIX0114+55119999999995204000053039865802BR5925Juliana e José Wesley6009SaoPaulo61080540900062250520Aspirador6304B4C2">Presentear</button>
+            </div>            
         </div>
     </section>
 
-    <!-- Modal para o QR Code do PIX -->
-    <div id="pixModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closePixModal()">&times;</span>
-            <h2>Pagamento via PIX</h2>
-            <p>Escaneie o QR Code abaixo para realizar o pagamento:</p>
-            <div id="qrcode"></div>
+    <div id="pix-popup" class="pix-overlay">
+        <div class="pix-content">
+            <span class="pix-close">&times;</span>
+            <h2>Faça seu pagamento via PIX</h2>
+            <p>Copie o código ou escaneie o QR Code abaixo:</p>
+            <input type="text" id="pix-code" value="0002012633...8495" readonly>
+            <button id="copy-pix">Copiar Código PIX</button>
+            <img src="assets/qrcode.png" alt="QR Code PIX">
         </div>
     </div>
+    
 
-    <!-- Footer -->
     <footer class="footer">
         <p>Com amor, Juliana e José Wesley ❤️</p>
     </footer>
 
-    <script>
-        // Função para abrir o modal e gerar o QR Code
-        function openPixModal(pixCode) {
-            const modal = document.getElementById("pixModal");
-            const qrcodeDiv = document.getElementById("qrcode");
-
-            // Limpa o QR Code anterior
-            qrcodeDiv.innerHTML = "";
-
-            // Gera o novo QR Code
-            new QRCode(qrcodeDiv, {
-                text: pixCode,
-                width: 200,
-                height: 200,
-            });
-
-            // Exibe o modal
-            modal.style.display = "block";
-        }
-
-        // Função para fechar o modal
-        function closePixModal() {
-            const modal = document.getElementById("pixModal");
-            modal.style.display = "none";
-        }
-
-        // Fecha o modal ao clicar fora dele
-        window.onclick = function (event) {
-            const modal = document.getElementById("pixModal");
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        };
-    </script>
 </body>
 </html>

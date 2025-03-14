@@ -49,6 +49,43 @@ document.addEventListener('DOMContentLoaded', function () {
 
     setInterval(updateCountdown, 1000);
     updateCountdown();
+
+    const giftButtons = document.querySelectorAll(".present-link2");
+    const pixPopup = document.getElementById("pix-popup");
+    const closePopup = document.querySelector(".pix-close");
+    const copyButton = document.getElementById("copy-pix");
+    const pixCodeInput = document.getElementById("pix-code");
+
+    // Abrir pop-up ao clicar em "Presentear"
+    giftButtons.forEach(button => {
+        button.addEventListener("click", function (event) {
+            event.preventDefault(); // Evita que a página recarregue
+
+            const pixCode = this.getAttribute("data-pix"); // Pega o código PIX do botão clicado
+            pixCodeInput.value = pixCode; // Define o código PIX no input
+
+            pixPopup.style.display = "flex"; // Mostra o pop-up
+        });
+    });
+
+    // Fechar pop-up ao clicar no botão de fechar
+    closePopup.addEventListener("click", function () {
+        pixPopup.style.display = "none";
+    });
+
+    // Fechar pop-up ao clicar fora dele
+    pixPopup.addEventListener("click", function (event) {
+        if (event.target === pixPopup) {
+            pixPopup.style.display = "none";
+        }
+    });
+
+    // Copiar código PIX
+    copyButton.addEventListener("click", function () {
+        pixCodeInput.select();
+        document.execCommand("copy");
+        alert("Código PIX copiado!");
+    });
 });
 
 const BIN_ID = "67d387f18960c979a57127da";
