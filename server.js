@@ -1,47 +1,31 @@
-const express = require("express");
-const fs = require("fs");
-const cors = require("cors");
-const bodyParser = require("body-parser");
+const BIN_ID = "67d387f18960c979a57127da";
+const API_KEY = "$2a$10$MbHv9mfb58XmirgOlQIQ7...WO4G8NVLTXvSe1Qw2PteXn9ACZ0G2";
 
-const app = express();
-const PORT = 3000;
+document.getElementById("rsvp-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-app.use(cors({ origin: "https://seusite.com" })); // Substitua pelo domínio do seu site
-app.use(bodyParser.json());
+    const name = document.getElementById("name").value;
+    const guests = parseInt(document.getElementById("guests").value);
 
-// Rota para salvar os dados do RSVP
-app.post("/rsvp", (req, res) => {
-    const { name, guests } = req.body;
-
-    if (!name || typeof guests !== "number") {
-        return res.status(400).json({ message: "Dados inválidos!" });
+    if (!name || isNaN(guests)) {
+        alert("Por favor, preencha todos os campos corretamente.");
+        return;
     }
 
     const newEntry = { name, guests, date: new Date().toISOString() };
 
-    fs.readFile("rsvp-list.json", (err, data) => {
-        let rsvpList = [];
-
-        if (!err) {
-            try {
-                rsvpList = JSON.parse(data);
-            } catch (error) {
-                console.error("Erro ao ler JSON:", error);
-            }
-        }
-
-        rsvpList.push(newEntry);
-
-        fs.writeFile("rsvp-list.json", JSON.stringify(rsvpList, null, 2), (err) => {
-            if (err) {
-                console.error("Erro ao salvar RSVP:", err);
-                return res.status(500).json({ message: "Erro ao salvar presença!" });
-            }
-            res.json({ message: "Presença confirmada com sucesso!" });
-        });
+    const response = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            "X-Master-Key": API_KEY,
+        },
+        body: JSON.stringify(newEntry),
     });
-});
 
-app.listen(PORT, () => {
-    console.log(`Servidor rodando em http://localhost:${PORT}`);
+    if (response.ok) {
+        document.getElementById("rsvp-message").textContent = "Presença confirmada com sucesso!";
+    } else {
+        document.getElementById("rsvp-message").textContent = "Erro ao confirmar presença. Tente novamente.";
+    }
 });
