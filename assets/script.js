@@ -51,32 +51,60 @@ document.addEventListener('DOMContentLoaded', function () {
     updateCountdown();
 });
 
-// Formulário de RSVP
-document.getElementById("rsvp-form")?.addEventListener("submit", function(event) {
-    event.preventDefault();
+const BIN_ID = "67d387f18960c979a57127da";
+const API_KEY = "$2a$10$MbHv9mfb58XmirgOlQIQ7...WO4G8NVLTXvSe1Qw2PteXn9ACZ0G2";
 
-    let name = document.getElementById("name").value.trim();
-    let guests = document.getElementById("guests").value;
+document.getElementById("rsvp-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-    if (!name) {
-        alert("Por favor, insira seu nome.");
+    const name = document.getElementById("name").value;
+    const guests = parseInt(document.getElementById("guests").value);
+
+    if (!name || isNaN(guests)) {
+        alert("Por favor, preencha todos os campos corretamente.");
         return;
     }
 
-    fetch("http://localhost:3000/rsvp", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, guests })
-    })
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById("rsvp-message").innerText = data.message;
-    })
-    .catch(error => {
+    const newEntry = { name, guests, date: new Date().toISOString() };
+
+    try {
+        // Step 1: Fetch the existing data from the bin
+        const getResponse = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
+            method: "GET",
+            headers: {
+                "X-Master-Key": API_KEY,
+            },
+        });
+
+        if (!getResponse.ok) {
+            throw new Error("Erro ao buscar dados existentes.");
+        }
+
+        const { record: existingData } = await getResponse.json();
+
+        // Ensure existingData is an array (handle cases where the bin is empty or contains invalid data)
+        const dataArray = Array.isArray(existingData) ? existingData : [];
+
+        // Step 2: Append the new entry to the existing data
+        const updatedData = [...dataArray, newEntry];
+
+        // Step 3: Update the bin with the combined data
+        const putResponse = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "X-Master-Key": API_KEY,
+            },
+            body: JSON.stringify(updatedData),
+        });
+
+        if (putResponse.ok) {
+            document.getElementById("rsvp-message").textContent = "Presença confirmada com sucesso!";
+        } else {
+            throw new Error("Erro ao atualizar o bin.");
+        }
+    } catch (error) {
         console.error("Erro:", error);
-        document.getElementById("rsvp-message").innerText = "Erro ao confirmar presença. Tente novamente.";
-    });
-
-    this.reset();
+        document.getElementById("rsvp-message").textContent = "Erro ao confirmar presença. Tente novamente.";
+    }
 });
-
