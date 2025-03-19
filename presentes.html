@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Presentes - Juliana e José Wesley</title>
+    <title>Juliana e José Wesley</title>
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="assets/script.js" defer></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Rolagem suave */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
     <div class="logo-header" aria-label="Logo do casamento Juliana e José Wesley"></div>
@@ -15,12 +24,16 @@
         <p>Escolha um presente especial para nos ajudar a começar essa nova fase da vida juntos.</p>
         <div class="gift-container">
             <div class="gift-item">
-                <h3>Jogo de Panelas</h3>
+                <img src="assets/items/0.jpeg" >
+                <h3>Jogo de Pratos Tramontina Porcelana 6 Peças Raso Maria Augusta 28cm Mesa Posta</h3>
+                <p>R$ 196,14</p>
                 <button class="present-link2" data-pix="00020126330014BR.GOV.BCB.PIX0114+55119999999995204000053039865802BR5925Juliana e José Wesley6009SaoPaulo61080540900062250520Panelas6304A3F3">Presentear</button>
             </div>
             
             <div class="gift-item">
-                <h3>Aspirador de Pó</h3>
+                <img src="assets/items/1.png" >
+                <h3>Aparelho de Jantar, Chá e Café Porcelana Schmidt 42 peças - Mod. Pomerode 114</h3>
+                <p>R$ 786,10</p>
                 <button class="present-link2" data-pix="00020126330014BR.GOV.BCB.PIX0114+55119999999995204000053039865802BR5925Juliana e José Wesley6009SaoPaulo61080540900062250520Aspirador6304B4C2">Presentear</button>
             </div>            
         </div>
@@ -33,7 +46,9 @@
             <p>Copie o código ou escaneie o QR Code abaixo:</p>
             <input type="text" id="pix-code" value="0002012633...8495" readonly>
             <button id="copy-pix">Copiar Código PIX</button>
-            <img src="assets/qrcode.png" alt="QR Code PIX">
+          
+            <textarea id="message" placeholder="Escreva uma mensagem para o casal..."></textarea>
+            <button id="send-message">Enviar Mensagem</button>
         </div>
     </div>
     
@@ -41,6 +56,5 @@
     <footer class="footer">
         <p>Com amor, Juliana e José Wesley ❤️</p>
     </footer>
-
 </body>
 </html>
